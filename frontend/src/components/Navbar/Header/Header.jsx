@@ -5,9 +5,12 @@ const Header = () => {
   return (
     <div className='header'>
         <div className='header-contents'>
-            <h2>Order your favourite meat here at Majus Enterprise</h2>
-            <p>Choose from Pork & Chicken</p>
-            <button>View More</button>
+            <h2>Majus Enterprise
+                Fresh
+                Australian Meat
+            </h2>
+            <p>Premium Australian Pork & Chicken</p>
+            <button>Explore More</button>
         </div>
     </div>
   )
