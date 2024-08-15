@@ -96,3 +96,11 @@
     font-size: 14px; /* Font size for copyright text */
     margin-top: 10px;
 }
+
+.footer hr{
+    width: 100%;
+    height: 2px;
+    margin: 20px 0;
+    background-color: grey;
+    border: none;
+}
