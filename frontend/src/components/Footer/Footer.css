@@ -1,0 +1,98 @@
+.footer {
+    color: #d9d9d9;
+    background-color: #323232;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 8vw; /* Adjusted padding for better spacing */
+    text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1200px; /* Max width to ensure it doesn’t stretch too wide */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-content-left,
+.footer-content-center,
+.footer-content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-content-left {
+    align-items: center;
+}
+
+.footer-logo {
+    width: 20px; /* Logo size */
+    height: 20px; /* Logo size */
+    object-fit: contain; /* Ensures the logo maintains aspect ratio */
+    margin-bottom: 20px; /* Spacing below the logo */
+}
+
+.footer-description {
+    font-size: 16px; /* Font size for description */
+    margin-bottom: 20px; /* Spacing below the description */
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Center icons horizontally */
+}
+
+.social-icon {
+    width: 24px; /* Social icon size */
+    height: 24px; /* Social icon size */
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.footer-content-center h2,
+.footer-content-right h2 {
+    margin-bottom: 15px; /* Spacing below headings */
+    font-size: 18px; /* Font size for headings */
+}
+
+.footer-content-center ul,
+.footer-content-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content-center li,
+.footer-content-right li {
+    margin-bottom: 10px; /* Spacing between list items */
+    font-size: 16px; /* Font size for list items */
+}
+
+.footer-content-center a,
+.footer-content-right a {
+    color: #d9d9d9;
+    text-decoration: none;
+}
+
+.footer-content-center a:hover,
+.footer-content-right a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #555;
+    margin: 20px 0;
+}
+
+.footer-copyright {
+    font-size: 14px; /* Font size for copyright text */
+    margin-top: 10px;
+}
