@@ -5,15 +5,16 @@
     align-items: center;
     padding: 15px 8vw;
     background-color: #ffffff;
-    color: #d9d9d9;
+    color: #333333; /* Updated to a darker color for better contrast */
     position: relative;
     z-index: 10;
-    border-bottom: 1px solid #e0e0e0; /* Add a subtle border for separation */
+    border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
 }
 
 /* Logo Styling */
 .logo {
-    width: 150px;
+    width: 80px;
+    height: 80;
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease; /* Smooth transition effect */
@@ -35,7 +36,7 @@
     width: 30px; /* Increased size for better visibility */
     height: 3px;
     background-color: #28a745;
-    margin: 5px 0; /* Slightly larger gap between bars */
+    margin: 6px 0; /* Slightly larger gap between bars */
     transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
 }
 
@@ -51,6 +52,7 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Navbar Menu Styling */
 .navbar-menu {
     display: flex;
     gap: 30px;
@@ -60,20 +62,22 @@
     transition: transform 0.3s ease; /* Smooth transition */
 }
 
-.navbar-menu li {
-    cursor: pointer;
+.navbar-menu a {
+    color: #333333; /* Dark color for better readability */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Consistent font size */
     padding: 10px;
-    color: #d9d9d9;
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
     border-radius: 5px; /* Rounded corners for menu items */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
 }
 
-.navbar-menu li:hover, 
+.navbar-menu a:hover, 
 .navbar-menu .active {
     color: #ffffff;
     background-color: #28a745; /* Highlight active or hovered items */
 }
 
+/* Navbar Right Section */
 .navbar-right {
     display: flex;
     align-items: center;
@@ -85,12 +89,12 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
-    transition: color 0.3s ease; /* Smooth transition */
+    transition: filter 0.3s ease; /* Smooth transition */
 }
 
 .search-icon:hover, 
 .basket-icon:hover {
-    color: #28a745; /* Change color on hover */
+    filter: brightness(0) invert(1); /* Change icon color on hover */
 }
 
 .basket-container {
@@ -103,10 +107,11 @@
     right: -5px;
     width: 12px; /* Slightly larger dot */
     height: 12px;
-    background-color: #28a745; /* Updated to match theme */
+    background-color: #28a745; /* Match theme */
     border-radius: 50%;
 }
 
+/* Sign In Button */
 .sign-in-button {
     padding: 10px 20px;
     background-color: #28a745;
@@ -134,7 +139,7 @@
         gap: 25px; /* Adjusted gap for better fit */
     }
 
-    .navbar-menu li {
+    .navbar-menu a {
         padding: 12px; /* Adjusted padding for better appearance */
         font-size: 15px; /* Adjusted font size */
     }
@@ -155,7 +160,7 @@
         gap: 20px; /* Reduced gap */
     }
 
-    .navbar-menu li {
+    .navbar-menu a {
         padding: 12px; /* Adjusted padding */
         font-size: 14px; /* Smaller font size for readability */
     }
@@ -190,7 +195,7 @@
         display: flex;
     }
 
-    .navbar-menu li {
+    .navbar-menu a {
         width: 100%;
         text-align: center;
         padding: 15px 0; /* Increased padding for better touch targets */
@@ -211,7 +216,7 @@
         gap: 10px;
     }
 
-    .navbar-menu li {
+    .navbar-menu a {
         padding: 10px; /* Adjusted for smaller screens */
         font-size: 16px; /* Adjusted for readability */
     }

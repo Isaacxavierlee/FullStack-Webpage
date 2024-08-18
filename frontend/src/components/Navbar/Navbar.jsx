@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Ensure to import Link for navigation
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 
@@ -23,18 +24,34 @@ const Navbar = () => {
         <span className='bar'></span>
       </div>
       <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
-        <li onClick={() => { setMenu("home"); toggleMenu(); }} className={menu === 'home' ? 'active' : ''}>
+        <Link 
+          to="/" 
+          onClick={() => { setMenu("home"); toggleMenu(); }} 
+          className={menu === 'home' ? 'active' : ''}
+        >
           Home
-        </li>
-        <li onClick={() => { setMenu("menu"); toggleMenu(); }} className={menu === 'menu' ? 'active' : ''}>
+        </Link>
+        <a 
+          href='#explore-menu' 
+          onClick={() => { setMenu("menu"); toggleMenu(); }} 
+          className={menu === 'menu' ? 'active' : ''}
+        >
           Menu
-        </li>
-        <li onClick={() => { setMenu("mobile-app"); toggleMenu(); }} className={menu === 'mobile-app' ? 'active' : ''}>
+        </a>
+        <a 
+          href='#app-download'  
+          onClick={() => { setMenu("mobile-app"); toggleMenu(); }} 
+          className={menu === 'mobile-app' ? 'active' : ''}
+        >
           Mobile-App
-        </li>
-        <li onClick={() => { setMenu("contact-us"); toggleMenu(); }} className={menu === 'contact-us' ? 'active' : ''}>
+        </a>
+        <a 
+          href='#footer'  
+          onClick={() => { setMenu("contact-us"); toggleMenu(); }} 
+          className={menu === 'contact-us' ? 'active' : ''}
+        >
           Contact Us
-        </li>
+        </a>
       </ul>
       <div className='navbar-right'>
         <img
