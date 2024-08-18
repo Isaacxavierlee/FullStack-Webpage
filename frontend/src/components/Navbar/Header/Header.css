@@ -1,8 +1,9 @@
+/* Base Header Styles */
 .header {
     height: 34vw;
     margin: 30px auto;
     background: url('/header_img.png') no-repeat;
-    background-size: contain;
+    background-size: cover; /* Changed to cover for better background fit */
     position: relative;
 }
 
@@ -24,6 +25,11 @@
     font-size: max(4.5vw, 22px);
 }
 
+.header-contents p {
+    color: white; /* Ensure text is visible */
+    font-size: max(1.5vw, 14px); /* Adjust font size for better readability */
+}
+
 .header-contents button {
     border: none;
     color: #747474;
@@ -35,11 +41,82 @@
     cursor: pointer;
 }
 
+/* Keyframes for fadeIn animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1050px) {
+    .header {
+        height: 38vw; /* Adjusted height for medium screens */
+    }
+
+    .header-contents {
+        max-width: 45%; /* Adjusted width for better content fit */
+        left: 7vw; /* Adjusted left position */
+        bottom: 12%; /* Adjusted bottom position */
+    }
+
+    .header-contents h2 {
+        font-size: max(5vw, 24px); /* Increased font size for medium screens */
+    }
+
+    .header-contents button {
+        padding: 1.2vw 2.5vw; /* Adjusted padding */
+        font-size: max(1.1vw, 14px); /* Slightly larger font size */
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: 45vw; /* Further adjusted height */
+    }
+
+    .header-contents {
+        max-width: 65%; /* Increased width for better content fit */
+        left: 8vw; /* Adjusted left position */
+        bottom: 15%; /* Adjusted bottom position */
+        gap: 2vw; /* Increased gap for better spacing */
+    }
+
+    .header-contents p {
+        display: none; /* Hide paragraph text on smaller screens */
+    }
+
+    .header-contents h2 {
+        font-size: max(6vw, 26px); /* Larger font size for better visibility */
+    }
+
+    .header-contents button {
+        padding: 1.5vw 3vw; /* Increased padding */
+        font-size: max(1.2vw, 15px); /* Larger font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 55vw; /* Further adjusted height for very small screens */
+    }
+
+    .header-contents {
+        max-width: 80%; /* Increased width for better content fit */
+        left: 5vw; /* Adjusted left position */
+        bottom: 20%; /* Adjusted bottom position */
+        gap: 2.5vw; /* Increased gap */
+    }
+
+    .header-contents h2 {
+        font-size: max(7vw, 30px); /* Larger font size for very small screens */
+    }
+
+    .header-contents button {
+        padding: 2vw 3.5vw; /* Adjusted padding */
+        font-size: max(1.5vw, 17px); /* Larger font size */
     }
 }

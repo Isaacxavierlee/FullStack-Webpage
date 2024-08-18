@@ -4,6 +4,11 @@ import { assets } from '../../assets/assets';
 
 const Navbar = () => {
   const [menu, setMenu] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className='navbar'>
@@ -12,17 +17,22 @@ const Navbar = () => {
         className='logo'
         alt='Majus Enterprise Logo'
       />
-      <ul className='navbar-menu'>
-        <li onClick={() => setMenu("home")} className={menu === 'home' ? 'active' : ''}>
+      <div className={`hamburger-menu ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span className='bar'></span>
+        <span className='bar'></span>
+        <span className='bar'></span>
+      </div>
+      <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
+        <li onClick={() => { setMenu("home"); toggleMenu(); }} className={menu === 'home' ? 'active' : ''}>
           Home
         </li>
-        <li onClick={() => setMenu("menu")} className={menu === 'menu' ? 'active' : ''}>
+        <li onClick={() => { setMenu("menu"); toggleMenu(); }} className={menu === 'menu' ? 'active' : ''}>
           Menu
         </li>
-        <li onClick={() => setMenu("mobile-app")} className={menu === 'mobile-app' ? 'active' : ''}>
+        <li onClick={() => { setMenu("mobile-app"); toggleMenu(); }} className={menu === 'mobile-app' ? 'active' : ''}>
           Mobile-App
         </li>
-        <li onClick={() => setMenu("contact-us")} className={menu === 'contact-us' ? 'active' : ''}>
+        <li onClick={() => { setMenu("contact-us"); toggleMenu(); }} className={menu === 'contact-us' ? 'active' : ''}>
           Contact Us
         </li>
       </ul>

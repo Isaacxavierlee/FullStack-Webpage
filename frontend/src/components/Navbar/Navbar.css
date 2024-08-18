@@ -1,67 +1,228 @@
+/* General Navbar Styling */
 .navbar {
-    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 8vw;
+    background-color: #ffffff;
+    color: #d9d9d9;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid #e0e0e0; /* Add a subtle border for separation */
 }
 
-.navbar .logo {
+/* Logo Styling */
+.logo {
     width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Slightly enlarge logo on hover */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    width: 30px; /* Increased size for better visibility */
+    height: 3px;
+    background-color: #28a745;
+    margin: 5px 0; /* Slightly larger gap between bars */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .navbar-menu {
     display: flex;
+    gap: 30px;
     list-style: none;
-    gap: 20px;
-    color: #49557e;
-    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.navbar-menu li {
+    cursor: pointer;
+    padding: 10px;
+    color: #d9d9d9;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    border-radius: 5px; /* Rounded corners for menu items */
+}
+
+.navbar-menu li:hover, 
+.navbar-menu .active {
+    color: #ffffff;
+    background-color: #28a745; /* Highlight active or hovered items */
 }
 
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 20px; /* Adjusted gap for spacing */
-    position: relative;
+    gap: 20px;
+}
+
+.search-icon, 
+.basket-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.search-icon:hover, 
+.basket-icon:hover {
+    color: #28a745; /* Change color on hover */
 }
 
 .basket-container {
-    position: relative; /* Position relative to allow absolute positioning of the dot */
+    position: relative;
 }
 
-.basket-icon {
-    position: relative; /* Position relative to the basket-container for dot positioning */
-}
-
-.dot {
+.basket-container .dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: green;
+    top: -5px;
+    right: -5px;
+    width: 12px; /* Slightly larger dot */
+    height: 12px;
+    background-color: #28a745; /* Updated to match theme */
     border-radius: 50%;
-    top: -5px; /* Adjusted top to move dot upwards */
-    right: -5px; /* Adjusted right to move dot towards the edge of the basket icon */
 }
 
-.navbar button {
-    background: transparent;
-    font-size: 16px;
-    color: #49557e;
-    border: 1px solid green;
-    padding: 10px 30px;
-    border-radius: 50px;
+.sign-in-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
-.navbar button:hover {
-    background-color: #fff4f2;
+.sign-in-button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
-.navbar .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
+/* Responsive Design */
+
+/* 1050px to 767px */
+@media screen and (max-width: 1050px) {
+    .navbar {
+        padding: 15px 6vw; /* Adjusted padding for medium screens */
+    }
+
+    .navbar-menu {
+        gap: 25px; /* Adjusted gap for better fit */
+    }
+
+    .navbar-menu li {
+        padding: 12px; /* Adjusted padding for better appearance */
+        font-size: 15px; /* Adjusted font size */
+    }
+
+    .search-icon, 
+    .basket-icon {
+        width: 22px; /* Slightly smaller icons */
+        height: 22px;
+    }
 }
 
-.navbar li {
-    cursor: pointer;
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 15px 5vw; /* Further adjusted padding for smaller screens */
+    }
+
+    .navbar-menu {
+        gap: 20px; /* Reduced gap */
+    }
+
+    .navbar-menu li {
+        padding: 12px; /* Adjusted padding */
+        font-size: 14px; /* Smaller font size for readability */
+    }
+
+    .search-icon, 
+    .basket-icon {
+        width: 20px; /* Smaller icons */
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        background-color: #ffffff;
+        position: absolute;
+        top: 70px; /* Adjusted to avoid overlap with logo */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0; /* Increased padding for better touch targets */
+        font-size: 18px; /* Larger font for readability */
+    }
+
+    .navbar-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 15px 3vw;
+    }
+
+    .navbar-menu {
+        gap: 10px;
+    }
+
+    .navbar-menu li {
+        padding: 10px; /* Adjusted for smaller screens */
+        font-size: 16px; /* Adjusted for readability */
+    }
+
+    .sign-in-button {
+        padding: 8px 16px;
+    }
+
+    .search-icon, 
+    .basket-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
